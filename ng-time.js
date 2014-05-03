@@ -3,7 +3,7 @@
 * AngularJS UI component for time display
 */
 
-angular.module('ngClock', [])
+angular.module('ngTime', [])
 
 .directive('clock', function($timeout,$compile) {
   var uniqueId = 1;
