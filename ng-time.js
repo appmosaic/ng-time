@@ -83,6 +83,7 @@ angular.module('ngClock', [])
   return {
     restrict: "E",
     transclude: true,
+    replace: false,
     scope: {
       width: "@",
       height: "@",
@@ -99,7 +100,7 @@ angular.module('ngClock', [])
           uniqueId++;
           var html ='<div>'+ createSvg(uniqueId) +'</div>';
           var e = $compile(html)(scope);
-          elm.replaceWith(e);          
+          elm.find('div').replaceWith(e);
           
           scope.tick = function() {
             //console.log('clock tick()'+ scope.timezone);
