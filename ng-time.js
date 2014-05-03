@@ -90,19 +90,16 @@ angular.module('ngClock', [])
       digital: "@"
     },
     //templateUrl: "templates/template1_clock.html",
-    template:
-      '<div>' +
-         //createSvg(uniqueId)+
-      '</div>',
+    template: '<div></div>',
     controller: function($scope) {
       //console.log('clock controller', $scope);
     },
     link : function(scope, elm, attrs) {
           console.log('clock link'+ uniqueId);
           uniqueId++;
-            var html ='<div>'+ createSvg(uniqueId) +'</div>';
-            var e =$compile(html)(scope);
-            elm.replaceWith(e);          
+          var html ='<div>'+ createSvg(uniqueId) +'</div>';
+          var e = $compile(html)(scope);
+          elm.replaceWith(e);          
           
           scope.tick = function() {
             //console.log('clock tick()'+ scope.timezone);
